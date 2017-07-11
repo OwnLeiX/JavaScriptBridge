@@ -71,6 +71,21 @@ public class JsIntentSubscriberAdapter implements JsIntentSubscriber {
     }
 
     @Override
+    public void onCallPhoneIntent(JsIntentEntity intent, String number) {
+
+    }
+
+    @Override
+    public void onSendSMSIntent(JsIntentEntity intent, String number, String content) {
+
+    }
+
+    @Override
+    public void onScanQRCodeIntent(JsIntentEntity intent) {
+
+    }
+
+    @Override
     public void onParseError(int errorCode, String msg) {
 
     }

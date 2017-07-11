@@ -35,5 +35,11 @@ public interface JsIntentSubscriber {
 
     void onPickContactIntent(JsIntentEntity intent);
 
+    void onCallPhoneIntent(JsIntentEntity intent,String number);
+
+    void onSendSMSIntent(JsIntentEntity intent,String number,String content);
+
+    void onScanQRCodeIntent(JsIntentEntity intent);
+
     void onParseError(int errorCode,String msg);
 }

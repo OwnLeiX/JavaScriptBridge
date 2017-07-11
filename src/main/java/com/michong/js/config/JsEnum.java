@@ -21,6 +21,9 @@ public interface JsEnum {
     String FINISH = HEADER + ".finish";
     String QUERY_NETWORK_STATUS = HEADER + ".networkReachability"; //网络状态
     String PICK_CONTACT = HEADER + ".pickContact"; //网络状态
+    String CALL_PHONE = HEADER + ".call"; //拨打电话
+    String SEND_SMS = HEADER + ".sendSMS"; //发送短信
+    String SCAN_QR_CODE = HEADER + ".scanQRCode"; //扫描二维码
 
     enum IntentType {
         Unknown(""),
@@ -35,7 +38,10 @@ public interface JsEnum {
         HyperLink(HYPER_LINK),
         Finish(FINISH),
         QueryNetworkStatus(QUERY_NETWORK_STATUS),
-        PickContact(PICK_CONTACT);
+        PickContact(PICK_CONTACT),
+        CallPhone(CALL_PHONE),
+        SendSMS(SEND_SMS),
+        ScanQRCode(SCAN_QR_CODE);
 
         private String apiName;
 
@@ -85,6 +91,15 @@ public interface JsEnum {
                     break;
                 case PICK_CONTACT:
                     returnValue = PickContact;
+                    break;
+                case CALL_PHONE:
+                    returnValue = CallPhone;
+                    break;
+                case SEND_SMS:
+                    returnValue = SendSMS;
+                    break;
+                case SCAN_QR_CODE:
+                    returnValue = ScanQRCode;
                     break;
             }
             return returnValue;
@@ -171,6 +186,19 @@ public interface JsEnum {
     interface PickContact {
         String callbackParamName1 = "name";
         String callbackParamName2 = "number";
+    }
+
+    interface CallPhone{
+        String dataKey = "number";
+    }
+
+    interface SendSMS{
+        String numberKey = "number";
+        String contentKey = "content";
+    }
+
+    interface ScanQRCode{
+        String callbackParamName = "result";
     }
 
     interface Exception {

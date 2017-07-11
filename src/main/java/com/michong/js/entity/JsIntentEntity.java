@@ -33,6 +33,10 @@ public class JsIntentEntity {
                 return 1;
             case PickContact:
                 return 2;
+            case ScanQRCode:
+                return 1;
+            case SendSMS:
+            case CallPhone:
             case ThirdShare:
             case SetTitle:
             case SaveToken:
@@ -72,6 +76,9 @@ public class JsIntentEntity {
                 } else if (index == 1) {
                     result = JsEnum.PickContact.callbackParamName2;
                 }
+            case ScanQRCode:
+                if (index == 0)
+                    result = JsEnum.ScanQRCode.callbackParamName;
             default:
                 result = "";
                 break;

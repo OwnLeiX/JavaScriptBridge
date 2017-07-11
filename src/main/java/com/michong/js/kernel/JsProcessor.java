@@ -230,6 +230,33 @@ final public class JsProcessor {
                             }
                         });
                         break;
+                    case CallPhone:
+                        final String number1 = data.getString(JsEnum.SendSMS.numberKey);
+                        mMainThreadHandler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                subscriber.onCallPhoneIntent(intent, number1);
+                            }
+                        });
+                        break;
+                    case SendSMS:
+                        final String number2 = data.getString(JsEnum.SendSMS.numberKey);
+                        final String content = data.getString(JsEnum.SendSMS.contentKey);
+                        mMainThreadHandler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                subscriber.onSendSMSIntent(intent, number2, content);
+                            }
+                        });
+                        break;
+                    case ScanQRCode:
+                        mMainThreadHandler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                subscriber.onScanQRCodeIntent(intent);
+                            }
+                        });
+                        break;
                     default:
                         mMainThreadHandler.post(new Runnable() {
                             @Override
