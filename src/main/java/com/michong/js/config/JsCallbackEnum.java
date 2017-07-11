@@ -8,7 +8,7 @@ package com.michong.js.config;
  */
 
 public enum JsCallbackEnum {
-    Succeed(0, ""), Failed(1, "失败"), Canceled(2, "取消");
+    Succeed(0, ""), Failed(1, "失败"), Canceled(2, "取消"),Refused(3,"权限拒绝");
 
     private int errno;
     private String errMsg;

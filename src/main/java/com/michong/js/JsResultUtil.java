@@ -57,4 +57,18 @@ final public class JsResultUtil {
         result.put(JsEnum.PickContact.callbackParamName2, numbersArray);
         return result;
     }
+
+    public static JSONObject buildSendSMSResult() {
+        return new JSONObject();
+    }
+
+    public static JSONObject buildCallPhoneResult() {
+        return new JSONObject();
+    }
+
+    public static JSONObject buildScanQRCodeResult(String content) throws JSONException {
+        JSONObject result = new JSONObject();
+        result.put(JsEnum.ScanQRCode.callbackParamName, content);
+        return result;
+    }
 }
