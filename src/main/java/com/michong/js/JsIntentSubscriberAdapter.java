@@ -81,6 +81,16 @@ public class JsIntentSubscriberAdapter implements JsIntentSubscriber {
     }
 
     @Override
+    public void onSaveDataIntent(JsIntentEntity intent, String key, String data) {
+
+    }
+
+    @Override
+    public void onGetDataIntent(JsIntentEntity intent, String key) {
+
+    }
+
+    @Override
     public void onUnbindPushAliasIntent(JsIntentEntity intent, String alias) {
 
     }

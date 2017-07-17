@@ -25,7 +25,7 @@ public interface JsIntentSubscriber {
 
     void onInterceptBackButtonIntent(JsIntentEntity intent, boolean intercept);
 
-    void onThirdShareIntent(JsIntentEntity intent, String shareId,String type);
+    void onThirdShareIntent(JsIntentEntity intent, String shareId, String type);
 
     void onHyperLinkIntent(JsIntentEntity intent, String target, String decodedUrl, boolean jsBridgeEnabled);
 
@@ -35,17 +35,21 @@ public interface JsIntentSubscriber {
 
     void onPickContactIntent(JsIntentEntity intent);
 
-    void onCallPhoneIntent(JsIntentEntity intent,String number);
+    void onCallPhoneIntent(JsIntentEntity intent, String number);
 
-    void onSendSMSIntent(JsIntentEntity intent,String number,String content);
+    void onSendSMSIntent(JsIntentEntity intent, String number, String content);
 
     void onScanQRCodeIntent(JsIntentEntity intent);
 
     void onGetPushDataIntent(JsIntentEntity intent);
 
-    void onBindPushAliasIntent(JsIntentEntity intent,String alias);
+    void onBindPushAliasIntent(JsIntentEntity intent, String alias);
 
-    void onUnbindPushAliasIntent(JsIntentEntity intent,String alias);
+    void onUnbindPushAliasIntent(JsIntentEntity intent, String alias);
 
-    void onParseError(int errorCode,String msg);
+    void onSaveDataIntent(JsIntentEntity intent, String key, String data);
+
+    void onGetDataIntent(JsIntentEntity intent, String key);
+
+    void onParseError(int errorCode, String msg);
 }

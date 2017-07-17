@@ -35,6 +35,8 @@ public class JsIntentEntity {
                 return 2;
             case ScanQRCode:
                 return 1;
+            case GetData:
+                return 1;
             case SendSMS:
             case CallPhone:
             case ThirdShare:
@@ -46,6 +48,7 @@ public class JsIntentEntity {
             case GetPushData:
             case BindPushAlias:
             case UnbindPushAlias:
+            case SaveData:
             default:
                 return 0;
         }
@@ -79,9 +82,15 @@ public class JsIntentEntity {
                 } else if (index == 1) {
                     result = JsEnum.PickContact.callbackParamName2;
                 }
+                break;
             case ScanQRCode:
                 if (index == 0)
                     result = JsEnum.ScanQRCode.callbackParamName;
+                break;
+            case GetData:
+                if (index == 0)
+                    result = JsEnum.GetData.callbackParamName;
+                break;
             default:
                 result = "";
                 break;

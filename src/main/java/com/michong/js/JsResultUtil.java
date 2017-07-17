@@ -80,4 +80,10 @@ final public class JsResultUtil {
     public static JSONObject buildPushAliasResult() {
         return new JSONObject();
     }
+
+    public static JSONObject buildGetDataResult(String data) throws JSONException {
+        JSONObject result = new JSONObject();
+        result.put(JsEnum.GetData.callbackParamName, data);
+        return result;
+    }
 }

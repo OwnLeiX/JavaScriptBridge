@@ -270,7 +270,7 @@ final public class JsProcessor {
                         mMainThreadHandler.post(new Runnable() {
                             @Override
                             public void run() {
-                                subscriber.onBindPushAliasIntent(intent,bindAlias);
+                                subscriber.onBindPushAliasIntent(intent, bindAlias);
                             }
                         });
                         break;
@@ -279,7 +279,26 @@ final public class JsProcessor {
                         mMainThreadHandler.post(new Runnable() {
                             @Override
                             public void run() {
-                                subscriber.onUnbindPushAliasIntent(intent,unbindAlias);
+                                subscriber.onUnbindPushAliasIntent(intent, unbindAlias);
+                            }
+                        });
+                        break;
+                    case SaveData:
+                        final String saveKey = data.getString(JsEnum.SaveData.keyKey);
+                        final String saveData = data.getString(JsEnum.BindPushAlias.dataKey);
+                        mMainThreadHandler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                subscriber.onSaveDataIntent(intent, saveKey, saveData);
+                            }
+                        });
+                        break;
+                    case GetData:
+                        final String getKey = data.getString(JsEnum.SaveData.keyKey);
+                        mMainThreadHandler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                subscriber.onGetDataIntent(intent, getKey);
                             }
                         });
                         break;

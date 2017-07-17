@@ -27,6 +27,8 @@ public interface JsEnum {
     String GET_PUSH_DATA = HEADER + ".getPushData"; //获取推送数据
     String BIND_PUSH_ALIAS = HEADER + ".bindPushAlias"; //获取推送数据
     String UNBIND_PUSH_ALIAS = HEADER + ".unbindPushAlias"; //获取推送数据
+    String SAVE_DATA = HEADER + ".saveData"; //存储数据
+    String GET_DATA = HEADER + ".getData"; //取出数据
 
     enum IntentType {
         Unknown(""),
@@ -47,7 +49,9 @@ public interface JsEnum {
         ScanQRCode(SCAN_QR_CODE),
         GetPushData(GET_PUSH_DATA),
         BindPushAlias(BIND_PUSH_ALIAS),
-        UnbindPushAlias(UNBIND_PUSH_ALIAS);
+        UnbindPushAlias(UNBIND_PUSH_ALIAS),
+        SaveData(SAVE_DATA),
+        GetData(GET_DATA);
 
         private String apiName;
 
@@ -115,6 +119,12 @@ public interface JsEnum {
                     break;
                 case UNBIND_PUSH_ALIAS:
                     returnValue = UnbindPushAlias;
+                    break;
+                case SAVE_DATA:
+                    returnValue = SaveData;
+                    break;
+                case GET_DATA:
+                    returnValue = GetData;
                     break;
             }
             return returnValue;
@@ -216,12 +226,22 @@ public interface JsEnum {
         String callbackParamName = "result";
     }
 
-    interface BindPushAlias{
+    interface BindPushAlias {
         String dataKey = "alias";
     }
 
-    interface UnbindPushAlias{
+    interface UnbindPushAlias {
         String dataKey = "alias";
+    }
+
+    interface GetData {
+        String keyKey = "key";
+        String callbackParamName = "data";
+    }
+
+    interface SaveData {
+        String keyKey = "key";
+        String dataKey = "data";
     }
 
     interface Exception {
