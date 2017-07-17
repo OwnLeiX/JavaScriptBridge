@@ -265,6 +265,24 @@ final public class JsProcessor {
                             }
                         });
                         break;
+                    case BindPushAlias:
+                        final String bindAlias = data.getString(JsEnum.BindPushAlias.dataKey);
+                        mMainThreadHandler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                subscriber.onBindPushAliasIntent(intent,bindAlias);
+                            }
+                        });
+                        break;
+                    case UnbindPushAlias:
+                        final String unbindAlias = data.getString(JsEnum.UnbindPushAlias.dataKey);
+                        mMainThreadHandler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                subscriber.onUnbindPushAliasIntent(intent,unbindAlias);
+                            }
+                        });
+                        break;
                     default:
                         mMainThreadHandler.post(new Runnable() {
                             @Override

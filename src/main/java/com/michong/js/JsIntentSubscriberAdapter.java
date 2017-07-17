@@ -76,6 +76,16 @@ public class JsIntentSubscriberAdapter implements JsIntentSubscriber {
     }
 
     @Override
+    public void onBindPushAliasIntent(JsIntentEntity intent, String alias) {
+
+    }
+
+    @Override
+    public void onUnbindPushAliasIntent(JsIntentEntity intent, String alias) {
+
+    }
+
+    @Override
     public void onSendSMSIntent(JsIntentEntity intent, String number, String content) {
 
     }

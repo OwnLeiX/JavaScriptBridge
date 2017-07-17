@@ -76,4 +76,8 @@ final public class JsResultUtil {
         JSONObject result = new JSONObject(jsonStringData);
         return result;
     }
+
+    public static JSONObject buildPushAliasResult() {
+        return new JSONObject();
+    }
 }

@@ -43,5 +43,9 @@ public interface JsIntentSubscriber {
 
     void onGetPushDataIntent(JsIntentEntity intent);
 
+    void onBindPushAliasIntent(JsIntentEntity intent,String alias);
+
+    void onUnbindPushAliasIntent(JsIntentEntity intent,String alias);
+
     void onParseError(int errorCode,String msg);
 }

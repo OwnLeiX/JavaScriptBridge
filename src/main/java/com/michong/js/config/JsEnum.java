@@ -25,6 +25,8 @@ public interface JsEnum {
     String SEND_SMS = HEADER + ".sendSMS"; //发送短信
     String SCAN_QR_CODE = HEADER + ".scanQRCode"; //扫描二维码
     String GET_PUSH_DATA = HEADER + ".getPushData"; //获取推送数据
+    String BIND_PUSH_ALIAS = HEADER + ".bindPushAlias"; //获取推送数据
+    String UNBIND_PUSH_ALIAS = HEADER + ".unbindPushAlias"; //获取推送数据
 
     enum IntentType {
         Unknown(""),
@@ -43,7 +45,9 @@ public interface JsEnum {
         CallPhone(CALL_PHONE),
         SendSMS(SEND_SMS),
         ScanQRCode(SCAN_QR_CODE),
-        GetPushData(GET_PUSH_DATA);
+        GetPushData(GET_PUSH_DATA),
+        BindPushAlias(BIND_PUSH_ALIAS),
+        UnbindPushAlias(UNBIND_PUSH_ALIAS);
 
         private String apiName;
 
@@ -105,6 +109,13 @@ public interface JsEnum {
                     break;
                 case GET_PUSH_DATA:
                     returnValue = GetPushData;
+                    break;
+                case BIND_PUSH_ALIAS:
+                    returnValue = BindPushAlias;
+                    break;
+                case UNBIND_PUSH_ALIAS:
+                    returnValue = UnbindPushAlias;
+                    break;
             }
             return returnValue;
         }
@@ -192,17 +203,25 @@ public interface JsEnum {
         String callbackParamName2 = "number";
     }
 
-    interface CallPhone{
+    interface CallPhone {
         String dataKey = "number";
     }
 
-    interface SendSMS{
+    interface SendSMS {
         String numberKey = "number";
         String contentKey = "content";
     }
 
-    interface ScanQRCode{
+    interface ScanQRCode {
         String callbackParamName = "result";
+    }
+
+    interface BindPushAlias{
+        String dataKey = "alias";
+    }
+
+    interface UnbindPushAlias{
+        String dataKey = "alias";
     }
 
     interface Exception {

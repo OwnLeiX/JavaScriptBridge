@@ -44,6 +44,8 @@ public class JsIntentEntity {
             case InterceptBack:
             case HyperLink:
             case GetPushData:
+            case BindPushAlias:
+            case UnbindPushAlias:
             default:
                 return 0;
         }
