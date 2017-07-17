@@ -43,6 +43,7 @@ public class JsIntentEntity {
             case CanBack:
             case InterceptBack:
             case HyperLink:
+            case GetPushData:
             default:
                 return 0;
         }

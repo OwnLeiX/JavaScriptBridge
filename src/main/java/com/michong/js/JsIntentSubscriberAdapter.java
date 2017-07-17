@@ -86,6 +86,11 @@ public class JsIntentSubscriberAdapter implements JsIntentSubscriber {
     }
 
     @Override
+    public void onGetPushDataIntent(JsIntentEntity intent) {
+
+    }
+
+    @Override
     public void onParseError(int errorCode, String msg) {
 
     }

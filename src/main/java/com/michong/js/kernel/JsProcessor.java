@@ -257,6 +257,14 @@ final public class JsProcessor {
                             }
                         });
                         break;
+                    case GetPushData:
+                        mMainThreadHandler.post(new Runnable() {
+                            @Override
+                            public void run() {
+                                subscriber.onGetPushDataIntent(intent);
+                            }
+                        });
+                        break;
                     default:
                         mMainThreadHandler.post(new Runnable() {
                             @Override

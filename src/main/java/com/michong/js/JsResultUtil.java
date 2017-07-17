@@ -71,4 +71,9 @@ final public class JsResultUtil {
         result.put(JsEnum.ScanQRCode.callbackParamName, content);
         return result;
     }
+
+    public static JSONObject buildGetPushDataResult(String jsonStringData) throws JSONException {
+        JSONObject result = new JSONObject(jsonStringData);
+        return result;
+    }
 }

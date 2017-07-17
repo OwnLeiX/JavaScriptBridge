@@ -24,6 +24,7 @@ public interface JsEnum {
     String CALL_PHONE = HEADER + ".call"; //拨打电话
     String SEND_SMS = HEADER + ".sendSMS"; //发送短信
     String SCAN_QR_CODE = HEADER + ".scanQRCode"; //扫描二维码
+    String GET_PUSH_DATA = HEADER + ".getPushData"; //获取推送数据
 
     enum IntentType {
         Unknown(""),
@@ -41,7 +42,8 @@ public interface JsEnum {
         PickContact(PICK_CONTACT),
         CallPhone(CALL_PHONE),
         SendSMS(SEND_SMS),
-        ScanQRCode(SCAN_QR_CODE);
+        ScanQRCode(SCAN_QR_CODE),
+        GetPushData(GET_PUSH_DATA);
 
         private String apiName;
 
@@ -101,6 +103,8 @@ public interface JsEnum {
                 case SCAN_QR_CODE:
                     returnValue = ScanQRCode;
                     break;
+                case GET_PUSH_DATA:
+                    returnValue = GetPushData;
             }
             return returnValue;
         }

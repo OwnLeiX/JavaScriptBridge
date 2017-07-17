@@ -41,5 +41,7 @@ public interface JsIntentSubscriber {
 
     void onScanQRCodeIntent(JsIntentEntity intent);
 
+    void onGetPushDataIntent(JsIntentEntity intent);
+
     void onParseError(int errorCode,String msg);
 }
